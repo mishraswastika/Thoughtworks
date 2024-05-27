@@ -1,0 +1,3 @@
+[mediawiki]
+$(terraform output -raw public_ip) ansible_user=adminuser ansible_password=P@ssw0rd1234! ansible_connection=ssh ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+

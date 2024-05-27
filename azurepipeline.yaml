@@ -1,0 +1,30 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install ansible
+  displayName: 'Install Ansible'
+
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: 'latest'
+
+- script: |
+    terraform init
+    terraform apply -auto-approve
+  displayName: 'Run Terraform'
+
+- script: |
+    ansible-playbook -i $(terraform output -raw public_ip), playbook.yml
+  displayName: 'Run Ansible Playbook'
+
