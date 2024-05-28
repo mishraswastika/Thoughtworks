@@ -15,7 +15,7 @@
 
     - name: Download MediaWiki
       get_url:
-        url: "https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.0.tar.gz"
+        url: "https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.14.tar.gz"
         dest: "/tmp/mediawiki.tar.gz"
 
     - name: Extract MediaWiki
