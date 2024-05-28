@@ -53,7 +53,7 @@ resource "azurerm_linux_virtual_machine" "media_vm" {
   network_interface_ids = [
     azurerm_network_interface.net.id,
   ]
-  source_image_id       = "/sharedGalleries/9bd05406-c85b-4e5d-9b66-c8920883291a-PREVIEWCOMPUTEIMAGEGALLERY/images/ubuntu-22.04/versions/latest"
+  source_image_id       = "/sharedGalleries/9bd05406-c85b-4e5d-9b66-c8920883291a-PREVIEWCOMPUTEIMAGEGALLERY/images/RedHat/versions/latest"
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
